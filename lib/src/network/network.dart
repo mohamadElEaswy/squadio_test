@@ -4,6 +4,9 @@ class NetworkHelper {
   static Dio? dio;
   static const _imageUrl = 'https://image.tmdb.org/t/p/w500/';
   static String imageUrl(String path) => _imageUrl + path;
+
+  static String imagesUrl(String id) => 'person/$id/images?api_key=$apiKey';
+
   static init() {
     dio = Dio(
       BaseOptions(
@@ -28,6 +31,9 @@ class NetworkHelper {
     return await dio!.get('$url?api_key=$apiKey');
   }
 
+  static Future<Response> getImagesList(String id) async {
+    return await dio!.get(imagesUrl(id));
+  }
 
   // static Stream<Response<dynamic>> getStreamData({
   //   required String url,

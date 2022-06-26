@@ -1,6 +1,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:squadio_test/src/commons/global_loading.dart';
 import 'package:squadio_test/src/features/details/ui/details_page.dart';
 import 'package:squadio_test/src/features/home/provider/home_provider.dart';
 import 'package:squadio_test/src/network/network.dart';
@@ -98,10 +99,3 @@ class _HomePageState extends State<HomePage> {
 
 // image.tmdb.org/t/p/original/tTlAA0REGPXSZPBfWyTW9ipIv1I.jpg
 
-class GlobalLoading extends StatelessWidget {
-  const GlobalLoading({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) =>
-      const Center(child: CircularProgressIndicator());
-}
